@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORION Search</title>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BACKGROUND SPACE */
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle at top, #1b2735, #090a0f);
+    color:white;
+}
+
+/* CONTAINER */
+.container{
+    text-align:center;
+}
+
+/* LOGO */
+.logo{
+    font-size:70px;
+    letter-spacing:8px;
+    margin-bottom:40px;
+    color:#ffffff;
+}
+
+/* SEARCH BOX */
+.search-box{
+    display:flex;
+    justify-content:center;
+}
+
+/* INPUT */
+.search-box input{
+    width:420px;
+    padding:14px 20px;
+    border:none;
+    border-radius:30px 0 0 30px;
+    outline:none;
+    font-size:16px;
+}
+
+/* BUTTON */
+.search-box button{
+    padding:14px 25px;
+    border:none;
+    border-radius:0 30px 30px 0;
+    background:#4c6fff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.search-box button:hover{
+    background:#3655e0;
+}
+
+/* SUGGESTION BOX */
+#suggestions{
+    width:420px;
+    margin:auto;
+    background:white;
+    color:black;
+    border-radius:10px;
+    text-align:left;
+}
+
+.suggest-item{
+    padding:10px;
+    cursor:pointer;
+}
+
+.suggest-item:hover{
+    background:#eee;
+}
+
+/* SMALL TEXT */
+.tagline{
+    margin-top:15px;
+    font-size:14px;
+    color:#cfd8ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="logo">ORION</h1>
+
+<form action="/search" method="GET" class="search-box">
+<input type="text" id="searchInput" name="q" placeholder="Cari sesuatu di galaksi ORION..." autocomplete="off">
+<button type="submit">Search</button>
+</form>
+
+<div id="suggestions"></div>
+
+<p class="tagline">Explore the universe of information</p>
+
+</div>
+
+<!-- LINK JAVASCRIPT -->
+<script src="/static/search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Hasil Pencarian ORION</title>
+
+<link rel="stylesheet" href="/static/result.css">
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1 class="logo">ORION</h1>
+
+<form action="/search" method="GET" class="search-box">
+<input type="text" name="q" value="{{ query }}">
+</form>
+
+</div>
+
+<h2>Hasil pencarian untuk "{{ query }}"</h2>
+
+<div class="results">
+
+{% if results %}
+
+{% for r in results %}
+
+<div class="result-item">
+<div class="result-title">{{ r }}</div>
+<div class="result-desc">Informasi dari database ORION</div>
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<p class="no-result">Tidak ada hasil ditemukan</p>
+
+{% endif %}
+
+</div>
+
+<a href="/" class="back">← Kembali ke ORION</a>
+
+</body>
+</html>
